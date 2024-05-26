@@ -3,9 +3,11 @@ import mongoose from 'mongoose';
 import { configDotenv } from 'dotenv';
 
 configDotenv();
-mongoose.connect(process.env.Mongo);
+mongoose.connect(process.env.Mongo).then(()=>{
+    console.log('Connected to the Database.!!!!')
+});
 const app = express();
 
 app.listen(3000, () => {
     console.log('server is running on port 3000!!!');
-})
+});
