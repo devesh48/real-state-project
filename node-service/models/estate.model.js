@@ -17,6 +17,6 @@ const estateSchema = new mongoose.Schema({
     }
 }, {timestamps: true});
 
-const Estate = mongoose('Estate', estateSchema);
+const Estate = mongoose.model('Estate', estateSchema);
 
 export default Estate;
