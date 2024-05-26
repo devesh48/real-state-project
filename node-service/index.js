@@ -1,5 +1,9 @@
 import express from 'express'
+import mongoose from 'mongoose';
+import { configDotenv } from 'dotenv';
 
+configDotenv();
+mongoose.connect(process.env.Mongo);
 const app = express();
 
 app.listen(3000, () => {
