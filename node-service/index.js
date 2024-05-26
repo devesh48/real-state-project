@@ -23,6 +23,8 @@ app.listen(3000, () => {
     console.log('server is running on port 3000!!!');
 });
 
+
+//middler ware used to handle error generally.
 app.use((err, req, res, next) => {
     const statusCode = res.statusCode || 500;
     const message = err.message || 'Internal Server Error!!.'
