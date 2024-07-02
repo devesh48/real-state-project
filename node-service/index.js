@@ -12,10 +12,6 @@ const app = express();
 
 app.use(express.json());
 
-// app.get('/healthcheck', (req, res) => {
-//     res.json('HealthCheck success!!!');
-// })
-
 app.use('/api/user', UserRouter);
 app.use('/api/auth', AuthRouter);
 
