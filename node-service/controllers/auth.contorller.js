@@ -19,7 +19,6 @@ export const signup = async (req, res, next) => {
 export const signin = async (req, res, next) => {
     try {
         const { email, password } = req.body;
-        console.log(email,password)
         const validUser = await Estate.findOne({email});
         if (!validUser) {
             return next(errorHandler(404, 'user not found!!!!'))
