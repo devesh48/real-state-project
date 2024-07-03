@@ -9,7 +9,7 @@ export default function Signin() {
   // const [loading, setLoading] = useState(false);
 
   // state.user ---> represent the name of state set in userSlice.js
-  const { loading, error } = useSelector((state) => state.user);
+  const { error, loading } = useSelector((state) => state.user);
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
