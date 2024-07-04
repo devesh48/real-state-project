@@ -10,7 +10,7 @@ export default function Header() {
         <header className="bg-slate-200 shadow-md">
 
             <div className="flex justify-between items-center max-w-6xl mx-auto p-3">
-                <Link to={'/'}>
+                <Link to='/'>
                     <h1 className="font-bold text-sm sm:text-xl flex flex-wrap">
                         <span className="text-slate-400">Devesh</span>
                         <span className="text-slate-600">Estate</span>
@@ -21,14 +21,14 @@ export default function Header() {
                     <FaSearch className='text-slate-500'></FaSearch>
                 </form>
                 <ul className='flex gap-4 font-semibold'>
-                    <Link to={'/'}>
+                    <Link to='/'>
                         <li className='hidden sm:inline text-slate-600 hover:underline' >Home</li>
                     </Link>
-                    <Link to={'/about'}>
+                    <Link to='/about'>
                         <li className='hidden sm:inline text-slate-600 hover:underline'>About</li>
                     </Link>
-                    <Link to={'/profile'}>
-                    {currentUser ? <img src = {currentUser.photo} className='rounded-full h-9 w-9' alt = 'profile'/> : (
+                    <Link to='/profile'>
+                    {currentUser ? <img src = {currentUser.photo} className='rounded-full h-9 w-9 object-cover' alt = 'profile'/> : (
                         <li className='text-slate-600 hover:underline'>Sign In</li>
                     )}
                     </Link>
