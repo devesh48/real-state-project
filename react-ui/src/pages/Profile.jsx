@@ -11,6 +11,7 @@ export default function Profile() {
   const [filePercent, setFilePercent] = useState(0);
   const [fileError, setFileError] = useState(false);
   const [formData, setFormData] = useState({});
+  const [updateSuccess, setUpdateSuccess] = useState(false);
 
   // this is used to persist value accross the applicaiton without re-rendering the page on updation of its value.
   const fileRef = useRef(null);
@@ -59,13 +60,13 @@ export default function Profile() {
       const data = await res.json();
 
       if (data.success === false) {
-        dispatch(updateUserFailure(data));
+        dispatch(updateUserFailure(data.message));
         return;
       }
       dispatch(updateUserSuccess(data));
       setUpdateSuccess(true)
     } catch (err) {
-      dispatch(updateUserFailure(err));
+      dispatch(updateUserFailure(err.message));
     }
   }
 
@@ -130,6 +131,7 @@ export default function Profile() {
         <span className="text-red-800 cursor-pointer font-semibold">Sign Out</span>
       </div>
       {error && <p className="text-red-600 mt-4 font-semibold">{error}</p>}
+      {updateSuccess && <p className="text-green-600 mt-4 font-semibold">User Updated Successfully</p>}
     </div >
   )
 }
